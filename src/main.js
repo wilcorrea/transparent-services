@@ -1,5 +1,16 @@
-import Product from 'src/domains/Product/Service/Product'
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import Plugin from 'src/service/Plugin'
 
-const product = Product.build({})
+Vue.config.productionTip = false
 
-product.read().then(console.warn)
+Vue.use(Plugin)
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  components: {App},
+  template: '<App/>'
+})
