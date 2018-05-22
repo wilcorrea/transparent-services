@@ -15,10 +15,9 @@
 import { money } from 'src/support/formatter'
 import Product from 'src/domains/Product/Service/Product'
 
-const service = Product.build({})
-
 export default {
   name: 'ProductTable',
+  service: Product.build({}),
   data: () => ({
     rows: []
   }),
@@ -26,7 +25,8 @@ export default {
     money: money
   },
   mounted () {
-    service.read().then(rows => {
+    // this.$service = null
+    this.$service.read().then(rows => {
       this.rows = rows
     })
   }
