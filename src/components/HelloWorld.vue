@@ -1,15 +1,21 @@
 <template>
   <div class="hello">
-    <ProductTable/>
+    <ProductTable v-bind:service="service"/>
   </div>
 </template>
 
 <script>
 import ProductTable from 'src/domains/Product/Components/ProductTable'
+import Product from 'src/domains/Product/Service/Product'
 
 export default {
   name: 'HelloWorld',
-  components: {ProductTable}
+  components: {
+    ProductTable
+  },
+  data: () => ({
+    service: Product.build({})
+  })
 }
 </script>
 

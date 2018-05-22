@@ -13,11 +13,14 @@
 
 <script>
 import { money } from 'src/support/formatter'
-import Product from 'src/domains/Product/Service/Product'
 
 export default {
   name: 'ProductTable',
-  service: Product.build({}),
+  props: {
+    service: {
+      required: true
+    }
+  },
   data: () => ({
     rows: []
   }),
