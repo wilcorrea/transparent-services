@@ -39,7 +39,7 @@ export default {
   }
 
   table, th, td {
-    border: solid 1px #ddd;
+    border: solid 1px #d0d0d0;
     border-collapse: collapse;
   }
 </style>
